@@ -50,7 +50,7 @@ function Write-InfoMessage
 
     Use-CallerPreference -Cmdlet $PSCmdlet -Session $ExecutionContext.SessionState
 
-    Write-Information -Message $Message
+    Write-Information -Message $Message -InformationAction $InformationPreference
 }
 
 function Invoke-WhatIfAction
