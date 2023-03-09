@@ -28,14 +28,6 @@ Build:
     DeleteSourceFiles: true
     TextSeparator: "$(NewLine)$(NewLine)"
 
-- CopyFile:
-    Path:
-    - LICENSE.txt
-    - NOTICE.txt
-    - README.md
-    - CHANGELOG.md
-    DestinationDirectory: Carbon
-
 - PowerShell:
     ExceptDuring: Clean
     Path: init.ps1
@@ -44,16 +36,12 @@ Build:
     OnlyDuring: Clean
     Path: reset.ps1
 
-# Build runs twice on some servers, so delete any ZIP file created by another build.
-- Delete:
-    Path: .output\*.zip
-
 - CopyFile:
     Path:
-    - CHANGELOG.md
-    - README.md
     - LICENSE.txt
     - NOTICE.txt
+    - README.md
+    - CHANGELOG.md
     DestinationDirectory: Muse
 
 - Zip:
@@ -79,6 +67,8 @@ Build:
             Enabled: true
             OutputPath: .output\pester.xml
             TestSuiteName: Muse
+        Output:
+            Verbosity: Detailed
 
 - PublishPowerShellModule:
     Path: Muse
