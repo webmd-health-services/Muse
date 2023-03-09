@@ -8,7 +8,7 @@ function Use-CallerPreference
     .DESCRIPTION
     Script module functions do not automatically inherit their caller's variables, including preferences set by common
     parameters. This means if you call a script with switches like `-Verbose` or `-WhatIf`, those that parameter don't
-    get passed into any function that belongs to a module. 
+    get passed into any function that belongs to a module.
 
     When used in a module function, `Use-CallerPreference` will grab the value of these common parameters used by the
     function's caller:
@@ -20,7 +20,7 @@ function Use-CallerPreference
      * Verbose
      * WarningAction
      * WhatIf
-    
+
     This function should be used in a module's function to grab the caller's preference variables so the caller doesn't
     have to explicitly pass common parameters to the module function.
 
@@ -58,7 +58,7 @@ function Use-CallerPreference
 
         [Parameter(Mandatory)]
         # The module function's `$ExecutionContext.SessionState` object.  Requires the function be decorated with the
-        # `[CmdletBinding()]` attribute. 
+        # `[CmdletBinding()]` attribute.
         #
         # Used to set variables in its callers' scope, even if that caller is in a different script module.
         [Management.Automation.SessionState]$SessionState
