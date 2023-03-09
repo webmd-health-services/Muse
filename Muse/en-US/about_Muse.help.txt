@@ -1,0 +1,8 @@
+TOPIC
+    about_Muse
+
+SHORT DESCRIPTION
+    Muse is a PowerShell module for...
+
+LONG DESCRIPTION
+    The Muse PowerShell module...
