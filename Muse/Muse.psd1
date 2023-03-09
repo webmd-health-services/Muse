@@ -18,10 +18,10 @@
     RootModule = 'Muse.psm1'
 
     # Version number of this module.
-    ModuleVersion = '0.0.0'
+    ModuleVersion = '1.0.0'
 
     # ID used to uniquely identify this module
-    GUID = ''
+    GUID = '4289519b-85c8-4394-a8a2-38723b891be7'
 
     # Author of this module
     Author = 'WebMD Health Services'
@@ -36,7 +36,7 @@
     Copyright = '(c) WebMD Health Services.'
 
     # Description of the functionality provided by this module
-    Description = ''
+    Description = 'Functions for helping and inspiring PowerShell module authors and developers.'
 
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion = '5.1'
@@ -116,8 +116,7 @@
             Prerelease = ''
 
             # ReleaseNotes of this module
-            ReleaseNotes = @'
-'@
+            ReleaseNotes = ''
         } # End of PSData hashtable
 
     } # End of PrivateData hashtable

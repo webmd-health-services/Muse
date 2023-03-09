@@ -7,8 +7,8 @@ Build:
 - Version:
     Path: Muse\Muse.psd1
     Prerelease:
-    - "*/*": alpha$(WHISKEY_BUILD_NUMBER)
-    - develop: rc$(WHISKEY_BUILD_NUMBER)
+    - main: ""
+    - "*": rc1
 
 # Update the AppVeyor build/version number.
 - Exec:
@@ -70,6 +70,17 @@ Build:
     Argument: [ 'PushArtifact', '.output/Muse-$(WHISKEY_SEMVER2).zip', '-DeploymentName', 'GitHub' ]
 
 
+- Pester:
+    Configuration:
+        Run:
+            Path: Tests\*.Tests.ps1
+            Exit: true
+            Throw: true
+        TestResult:
+            Enabled: true
+            OutputPath: .output\pester.xml
+            TestSuiteName: Muse
+
 - PublishPowerShellModule:
     Path: Muse
 
@@ -82,14 +93,3 @@ Build:
         '-DeploymentName',
         'PowerShellGallery'
     ]
-
-- Pester:
-    Configuration:
-        Run:
-            Path: Tests\*.Tests.ps1
-            Exit: true
-            Throw: true
-        TestResult:
-            Enabled: true
-            OutputPath: .output\pester.xml
-            TestSuiteName: Template-PSModule-OSS-Apache2.0
