@@ -52,8 +52,8 @@ Build:
     Path:
     - CHANGELOG.md
     - README.md
-    - LICENSE
-    - NOTICE
+    - LICENSE.txt
+    - NOTICE.txt
     DestinationDirectory: Muse
 
 - Zip:
@@ -68,7 +68,6 @@ Build:
     OnlyBy: BuildServer
     Path: appveyor
     Argument: [ 'PushArtifact', '.output/Muse-$(WHISKEY_SEMVER2).zip', '-DeploymentName', 'GitHub' ]
-
 
 - Pester:
     Configuration:
