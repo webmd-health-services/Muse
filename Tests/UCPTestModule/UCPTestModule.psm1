@@ -1,4 +1,6 @@
 
+Import-Module -Name (Join-Path -Path $PSScriptRoot -ChildPath '..\..\Muse' -Resolve) -Force
+
 function Write-VerboseMessage
 {
     [CmdletBinding()]
